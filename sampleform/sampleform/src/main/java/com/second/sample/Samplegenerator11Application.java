@@ -1,0 +1,14 @@
+package com.second.sample;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
+
+@SpringBootApplication(exclude=SecurityAutoConfiguration.class)
+public class Samplegenerator11Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Samplegenerator11Application.class, args);
+	}
+
+}
