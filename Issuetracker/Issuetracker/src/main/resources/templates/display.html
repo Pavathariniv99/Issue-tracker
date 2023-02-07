@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">>
+<head>
+<title>Issue tracker system</title>
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container my-2">
+<h1> View Tickets</h1>
+
+<table border="l" class="table table-striped table-responsive-md">
+<thead>
+<tr>
+<th> Emp Id</th>
+<th> Emp Name</th>
+<th> project</th>
+<th> Issues</th>
+<th> other</th>
+<th>comment</th>
+<th>status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="pa:${pa}">
+<td th:text="${pa.Empid}"></td>
+<td th:text="${pa.Empname}"></td>
+<td th:text="${pa.project}"></td>
+<td th:text="${pa.Issues}"></td>
+<td th:text="${pa.others}"></td>
+<td th:text="${pa.comment}"></td>
+<td th:text="${pa.status}"></td>
+<td>
+<a th:href="@{'/update/' + ${pa.Empid}}">update</a>&nbsp;&nbsp;&nbsp;
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
+
