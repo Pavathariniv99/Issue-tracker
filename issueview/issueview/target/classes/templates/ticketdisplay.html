@@ -1,0 +1,58 @@
+<html xmlns:th="http://www.thymeleaf.org">>
+<head>
+<title>Issue tracker system</title>
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+</head>
+<body>
+
+<div align="center" class="container my-2">
+<h1> USER VIEW TICKETS</h1>
+
+
+
+<a th:href="@{/ticketcreate}" class="btn btn-primary btn-sm mb-3">Create Ticket</a>
+<a th:href="@{/displays}" class="btn btn-primary btn-sm mb-3">Admin View Page</a>
+<a th:href="@{/dept}" class="btn btn-primary btn-sm mb-3">Admin  department</a>
+
+
+
+
+
+<table border="l" class="table table-striped table-responsive-md">
+<thead>
+<tr>
+<th> Emp Id</th>
+<th> Emp Name</th>
+<th> project</th>
+<th> Issues</th>
+<th> other</th>
+<th>comment</th>
+<th>status</th>
+<th>Deparment</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="issuemodel:${issuemodel}">
+<td th:text="${issuemodel.Empid}"></td>
+<td th:text="${issuemodel.Empname}"></td>
+<td th:text="${issuemodel.project}"></td>
+<td th:text="${issuemodel.Issues}"></td>
+<td th:text="${issuemodel.others}"></td>
+<td th:text="${issuemodel.comment}"></td>
+<td th:text="${issuemodel.status}"></td>
+<td th:text="${issuemodel.department}"></td>
+
+<td>
+<a th:href="@{'/update/' + ${issuemodel.Empid}}">update</a>&nbsp;&nbsp;&nbsp;
+</td>
+
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</html>
